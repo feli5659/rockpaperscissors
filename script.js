@@ -16,6 +16,11 @@ function start() {
 // when rock-button is clicked it defines the variable userChoice as rock and runs functions userchooses and random number
 rock.addEventListener("click", function () {
   userChoice = "rock";
+  document.querySelector("#player2").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#player1").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#win").classList.add("hidden");
+  document.querySelector("#lose").classList.add("hidden");
+  document.querySelector("#draw").classList.add("hidden");
   document.querySelector("#player1").classList.add("shake");
   document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
@@ -25,6 +30,11 @@ rock.addEventListener("click", function () {
 
 paper.addEventListener("click", function () {
   userChoice = "paper";
+  document.querySelector("#player2").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#player1").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#win").classList.add("hidden");
+  document.querySelector("#lose").classList.add("hidden");
+  document.querySelector("#draw").classList.add("hidden");
   document.querySelector("#player1").classList.add("shake");
   document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
@@ -35,6 +45,11 @@ paper.addEventListener("click", function () {
 
 scissors.addEventListener("click", function () {
   userChoice = "scissors";
+  document.querySelector("#player2").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#player1").classList.remove("paper", "scissors", "rock");
+  document.querySelector("#win").classList.add("hidden");
+  document.querySelector("#lose").classList.add("hidden");
+  document.querySelector("#draw").classList.add("hidden");
   document.querySelector("#player1").classList.add("shake");
   document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
@@ -110,6 +125,3 @@ function compare() {
     document.querySelector("#draw").classList.remove("hidden");
   }
 }
-
-// show result
-// create if statements for win - lose - draw
