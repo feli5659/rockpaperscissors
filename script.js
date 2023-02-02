@@ -11,53 +11,50 @@ const scissors = document.querySelector(".scissors");
 
 function start() {
   console.log("loaded");
+
 }
 
 // when rock-button is clicked it defines the variable userChoice as rock and runs functions userchooses and random number
 rock.addEventListener("click", function () {
   userChoice = "rock";
-  userChooses();
-  randomNum();
-  // addeventlistener to start animation when button clicked
-
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNum);
 });
 // when paper-button is clicked it defines the variable userChoice as paper and runs functions userchooses and random number
 
 paper.addEventListener("click", function () {
   userChoice = "paper";
-  userChooses();
-  randomNum();
-  // addeventlistener to start animation when button clicked
-
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNum);
 });
 
 // when scissors-button is clicked it defines the variable userChoice as scissors and runs functions userchooses and random number
 
 scissors.addEventListener("click", function () {
   userChoice = "scissors";
-  userChooses();
-  randomNum();
-  // addeventlistener to start animation when button clicked
-
   document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player1").addEventListener("animationend", userChooses);
   document.querySelector("#player2").classList.add("shake");
+  document.querySelector("#player2").addEventListener("animationend", randomNum);
 });
 
 function userChooses() {
   // if statements that declare in the console what the user has chosen
   if (userChoice == "rock") {
-    console.log("user chooses rock");
-    
+    document.querySelector("#player1").classList.remove("shake");
+    document.querySelector("#player1").classList.add("rock");
   } else if (userChoice == "paper") {
-    console.log("user chooses paper");
+    document.querySelector("#player1").classList.remove("shake");
     document.querySelector("#player1").classList.add("paper");
   } else {
-    console.log("user chooses scissors");
+    document.querySelector("#player1").classList.remove("shake");
+    document.querySelector("#player1").classList.add("scissors");
   }
+  console.log("User chooses " + userChoice);
 }
 
 // creates random number for the computer
@@ -70,10 +67,16 @@ function randomNum() {
 function computerChooses() {
   if (compNum == 1) {
     compChoice = "rock";
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("rock");
   } else if (compNum == 2) {
     compChoice = "paper";
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("paper");
   } else if (compNum == 3) {
     compChoice = "scissors";
+    document.querySelector("#player2").classList.remove("shake");
+    document.querySelector("#player2").classList.add("scissors");
   }
   console.log("computer chooses " + compChoice);
   compare();
