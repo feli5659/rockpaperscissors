@@ -9,46 +9,58 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 
-// when button is clicked - it calls random number function
-// userBtn.forEach((button) =>
-//   button.addEventListener("click", () => {
-//     randomNum();
-//     userChooses();
-//   })
-// );
-
 function start() {
   console.log("loaded");
 }
 
+// when rock-button is clicked it defines the variable userChoice as rock and runs functions userchooses and random number
 rock.addEventListener("click", function () {
   userChoice = "rock";
   userChooses();
   randomNum();
+  // addeventlistener to start animation when button clicked
+
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
+// when paper-button is clicked it defines the variable userChoice as paper and runs functions userchooses and random number
 
 paper.addEventListener("click", function () {
   userChoice = "paper";
   userChooses();
   randomNum();
+  // addeventlistener to start animation when button clicked
+
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
+
+// when scissors-button is clicked it defines the variable userChoice as scissors and runs functions userchooses and random number
+
 scissors.addEventListener("click", function () {
   userChoice = "scissors";
   userChooses();
   randomNum();
+  // addeventlistener to start animation when button clicked
+
+  document.querySelector("#player1").classList.add("shake");
+  document.querySelector("#player2").classList.add("shake");
 });
 
 function userChooses() {
+  // if statements that declare in the console what the user has chosen
   if (userChoice == "rock") {
     console.log("user chooses rock");
+    
   } else if (userChoice == "paper") {
     console.log("user chooses paper");
+    document.querySelector("#player1").classList.add("paper");
   } else {
     console.log("user chooses scissors");
   }
-  // addeventlistener to start animation when button clicked
 }
 
+// creates random number for the computer
 function randomNum() {
   compNum = Math.floor(Math.random() * 3) + 1;
   computerChooses();
