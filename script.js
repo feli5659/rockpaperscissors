@@ -11,7 +11,6 @@ const scissors = document.querySelector(".scissors");
 
 function start() {
   console.log("loaded");
-
 }
 
 // when rock-button is clicked it defines the variable userChoice as rock and runs functions userchooses and random number
@@ -85,23 +84,30 @@ function computerChooses() {
 function compare() {
   if ((userChoice == "rock") & (compChoice == "scissors")) {
     console.log("user wins");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((userChoice == "scissors") & (compChoice == "rock")) {
     console.log("comp wins");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((userChoice == "paper") & (compChoice == "rock")) {
     console.log("user wins");
+    document.querySelector("#win").classList.remove("hidden");
   }
   if ((userChoice == "rock") & (compChoice == "paper")) {
     console.log("comp wins");
+    document.querySelector("#lose").classList.remove("hidden");
   }
   if ((userChoice == "scissors") & (compChoice == "paper")) {
     console.log("user wins");
+    document.querySelector("#lose").classList.remove("hidden");
   }
   if ((userChoice == "paper") & (compChoice == "scissors")) {
     console.log("comp wins");
+    document.querySelector("#lose").classList.remove("hidden");
   } else if (userChoice == compChoice) {
     console.log("draw");
+    document.querySelector("#draw").classList.remove("hidden");
   }
 }
 
